@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  z-index: 2;
+  margin-left: 0.5rem;
 }
 
 .navbar__user {
@@ -132,41 +132,41 @@
     margin-left: auto;
   }
 
-  .navbar__links,
-  .navbar__auth {
+  .navbar__links {
     display: none;
   }
 
-  .navbar--open .navbar__links,
-  .navbar--open .navbar__auth {
-    display: flex;
-  }
-
   .navbar--open .navbar__links {
+    display: flex;
     position: absolute;
-    inset: 0 0 auto 0;
+    inset: 0;
     min-height: 100svh;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 1.5rem;
     background: #000;
     color: #fff;
-    padding: 5rem 1.5rem 2rem;
+    padding: 5.5rem 1.5rem 2rem;
+    z-index: 1;
   }
 
   .navbar--open .navbar__auth {
-    position: absolute;
-    left: 1.5rem;
-    right: 1.5rem;
-    bottom: 2rem;
+    margin-left: 0;
+    margin-top: auto;
+    width: 100%;
     justify-content: center;
+    padding-bottom: 0.5rem;
+  }
+
+  .navbar--open .navbar__login {
+    width: 100%;
   }
 
   .navbar--open .navbar__login.btn--dark {
     background: var(--red);
     color: #fff;
     border-color: var(--red);
-    width: 100%;
   }
 
   .navbar__brand span {

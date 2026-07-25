@@ -28,6 +28,25 @@ const pillars = [
   },
 ]
 
+const academyPhotos = [
+  {
+    src: '/images/players/a1.png',
+    alt: 'Gioca player dribbling the ball in training',
+  },
+  {
+    src: '/images/players/b21.png',
+    alt: 'Gioca player running with the ball on the pitch',
+  },
+  {
+    src: '/images/players/a4.jpg',
+    alt: 'Gioca players working through an agility drill',
+  },
+  {
+    src: '/images/players/a3.png',
+    alt: 'Training session with the ball on the pitch',
+  },
+]
+
 const parentQuotes = [
   {
     quote:
@@ -161,6 +180,27 @@ export function Home() {
               <li key={pillar.title}>
                 <h3>{pillar.title}</h3>
                 <p>{pillar.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section section--gallery">
+        <div className="container">
+          <header className="section__header section__header--center">
+            <p className="eyebrow">On the pitch</p>
+            <h2>Real players. Real development.</h2>
+            <p className="section__intro">
+              From first touches to match day — these are Gioca athletes training,
+              competing, and growing together in Central Jersey.
+            </p>
+          </header>
+
+          <ul className="photo-grid">
+            {academyPhotos.map((photo) => (
+              <li key={photo.src} className="photo-grid__item">
+                <img src={photo.src} alt={photo.alt} loading="lazy" />
               </li>
             ))}
           </ul>

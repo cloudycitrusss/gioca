@@ -1,6 +1,21 @@
 import { Link } from 'react-router-dom'
 import './pages.css'
 
+const playClips = [
+  {
+    src: '/videos/play-clip-1.mp4',
+    label: 'Players training on the pitch',
+  },
+  {
+    src: '/videos/play-clip-2.mp4',
+    label: 'Gioca athletes in action',
+  },
+  {
+    src: '/videos/play-clip-3.mp4',
+    label: 'Game-speed development',
+  },
+]
+
 const founders = [
   {
     name: 'Zane Taha',
@@ -24,6 +39,43 @@ export function About() {
           <p className="eyebrow">About Us</p>
           <h1>Empowering athletes to reach their full potential</h1>
         </header>
+
+        <div className="about-clips" aria-label="Players in action">
+          {playClips.map((clip) => (
+            <div key={clip.src} className="about-clips__item">
+              <video
+                src={clip.src}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label={clip.label}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="about-video">
+          <p className="eyebrow">Hear from the coaches</p>
+          <h2>Why we built Gioca</h2>
+          <p className="section__intro">
+            Press play to hear Zane and Julian talk about the academy, our
+            approach, and what whole-person development means for every player.
+          </p>
+          <div className="about-video__frame">
+            <video
+              className="about-video__player"
+              src="/videos/coaches-talking.mp4"
+              controls
+              playsInline
+              preload="metadata"
+              poster="/images/posters/328be9.jpg"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
 
         <div className="prose">
           <p>

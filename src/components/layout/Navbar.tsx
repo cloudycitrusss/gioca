@@ -66,26 +66,26 @@ export function Navbar() {
               {link.label}
             </NavLink>
           ))}
-        </nav>
 
-        <div className="navbar__auth">
-          {user ? (
-            <>
-              <span className="navbar__user">{user.email}</span>
-              <button
-                type="button"
-                className="btn btn--ghost navbar__login"
-                onClick={() => logout()}
-              >
-                Log out
-              </button>
-            </>
-          ) : (
-            <NavLink to="/login" className="btn btn--dark navbar__login">
-              Log In
-            </NavLink>
-          )}
-        </div>
+          <div className="navbar__auth">
+            {user ? (
+              <>
+                <span className="navbar__user">{user.email}</span>
+                <button
+                  type="button"
+                  className="btn btn--ghost navbar__login"
+                  onClick={() => logout()}
+                >
+                  Log out
+                </button>
+              </>
+            ) : (
+              <NavLink to="/login" className="btn btn--dark navbar__login">
+                Log In
+              </NavLink>
+            )}
+          </div>
+        </nav>
       </div>
     </header>
   )
