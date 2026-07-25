@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Logo-driven Gioca crest: black, red, white, gold */
+  --bg: #0a0a0a;
+  --bg-elevated: #141414;
+  --bg-soft: #1c1c1c;
+  --surface: #111111;
+  --text: #ffffff;
+  --text-secondary: #d0d0d0;
+  --muted: #9a9a9a;
+  --border: #2a2a2a;
+  --red: #e10600;
+  --red-bright: #ff1a1a;
+  --red-deep: #9b0000;
+  --gold: #d4af37;
+  --accent: var(--red);
+  --accent-hover: var(--red-bright);
+
+  --sans: 'Barlow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --display: 'Bebas Neue', 'Barlow Condensed', Impact, sans-serif;
+
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100svh;
+  background: var(--bg);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--display);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: min(1120px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.9rem 1.7rem;
+  border-radius: 0;
+  border: 2px solid transparent;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
+  box-shadow: 0 0 0 0 rgba(225, 6, 0, 0.4);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--red-bright);
+  border-color: var(--red-bright);
+  box-shadow: 0 8px 28px rgba(225, 6, 0, 0.35);
+}
+
+.btn--light {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.btn--light:hover:not(:disabled) {
+  background: #f2f2f2;
+  border-color: #f2f2f2;
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.btn--dark {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.btn--dark:hover:not(:disabled) {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.linkish {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--red-bright);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(225, 6, 0, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 28px 2px rgba(225, 6, 0, 0.45);
+  }
+}
