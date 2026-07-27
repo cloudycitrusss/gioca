@@ -319,9 +319,14 @@ export function Home() {
             <h2>Ready to train with Gioca?</h2>
             <p>Ask about programs, tryouts, or a free training session.</p>
           </div>
-          <Link to="/contact" className="btn btn--primary btn--glow">
-            Contact Us
-          </Link>
+          <div className="hero__actions">
+            <Link to="/tryouts" className="btn btn--primary btn--glow">
+              Sign up for tryouts
+            </Link>
+            <Link to="/contact" className="btn btn--ghost">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
     </>

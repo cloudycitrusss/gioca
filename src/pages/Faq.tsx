@@ -4,8 +4,7 @@ import './pages.css'
 const faqs = [
   {
     question: 'What leagues do you play in?',
-    answer:
-      'We currently play in MOSA. Our goal is to play in high levels of EDP and eventually MLS Next.',
+    answer: 'We play in MOSA and EDP.',
   },
   {
     question: 'Do I need any prior experience to join your sessions?',
@@ -15,7 +14,7 @@ const faqs = [
   {
     question: 'What age groups does Gioca Soccer Academy cater to?',
     answer:
-      'We offer programs for children starting from age 5 to 15, tailored to each age group.',
+      'We coach players with birth years from 2018 to 2010, with programs tailored to each age group.',
   },
   {
     question: 'Where are you located?',

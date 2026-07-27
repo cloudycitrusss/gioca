@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom'
 import './pages.css'
 
-const playClips = [
+const playPhotos = [
   {
-    src: '/videos/play-clip-1.mp4',
-    label: 'Players training on the pitch',
+    src: '/images/players/a1.png',
+    alt: 'Gioca player dribbling the ball in training',
   },
   {
-    src: '/videos/play-clip-2.mp4',
-    label: 'Gioca athletes in action',
+    src: '/images/players/b21.png',
+    alt: 'Gioca player running with the ball on the pitch',
   },
   {
-    src: '/videos/play-clip-3.mp4',
-    label: 'Game-speed development',
+    src: '/images/players/a4.jpg',
+    alt: 'Gioca players working through an agility drill',
   },
 ]
 
@@ -41,17 +41,9 @@ export function About() {
         </header>
 
         <div className="about-clips" aria-label="Players in action">
-          {playClips.map((clip) => (
-            <div key={clip.src} className="about-clips__item">
-              <video
-                src={clip.src}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label={clip.label}
-              />
+          {playPhotos.map((photo) => (
+            <div key={photo.src} className="about-clips__item">
+              <img src={photo.src} alt={photo.alt} loading="lazy" />
             </div>
           ))}
         </div>
@@ -63,14 +55,14 @@ export function About() {
             Press play to hear Zane and Julian talk about the academy, our
             approach, and what whole-person development means for every player.
           </p>
-          <div className="about-video__frame">
+          <div className="about-video__frame about-video__frame--landscape">
             <video
               className="about-video__player"
-              src="/videos/coaches-talking.mp4"
+              src="/videos/play-clip-1.mp4"
               controls
               playsInline
               preload="metadata"
-              poster="/images/posters/328be9.jpg"
+              poster="/images/posters/027ced.jpg"
             >
               Your browser does not support the video tag.
             </video>
