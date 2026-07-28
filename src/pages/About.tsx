@@ -1,18 +1,33 @@
 import { Link } from 'react-router-dom'
 import './pages.css'
 
-const playPhotos = [
+const storyBlocks = [
   {
-    src: '/images/players/a1.png',
-    alt: 'Gioca player dribbling the ball in training',
+    photo: {
+      src: '/images/players/a1.png',
+      alt: 'Gioca player dribbling the ball in training',
+    },
+    title: 'Why We Started Gioca',
+    subtitle: 'More Than Just an Academy',
+    body: 'Gioca was created to give players the attention and care they deserve. Too many programs focus on getting bigger, not better. Our goal has always been to provide personalized coaching in a supportive environment where every player can grow both on and off the field.',
   },
   {
-    src: '/images/players/b21.png',
-    alt: 'Gioca player running with the ball on the pitch',
+    photo: {
+      src: '/images/players/b21.png',
+      alt: 'Gioca player running with the ball on the pitch',
+    },
+    title: 'Our Philosophy',
+    subtitle: 'Soccer as a Vehicle for Life',
+    body: 'We believe the lessons learned on the field go far beyond the game. Through discipline, teamwork, and mental strength, our players develop skills that help them succeed in soccer and in life. Gioca is about building confident, well-rounded individuals, not just great athletes.',
   },
   {
-    src: '/images/players/a4.jpg',
-    alt: 'Gioca players working through an agility drill',
+    photo: {
+      src: '/images/players/a4.jpg',
+      alt: 'Gioca players working through an agility drill',
+    },
+    title: 'Our Commitment',
+    subtitle: 'Quality Over Quantity',
+    body: 'We value quality coaching and meaningful connections over numbers. By keeping our groups small and focused, we create an environment where every player feels supported and challenged. This approach ensures consistent progress and a true love for the game.',
   },
 ]
 
@@ -38,22 +53,50 @@ export function About() {
         <header className="page__header">
           <p className="eyebrow">About Us</p>
           <h1>Empowering athletes to reach their full potential</h1>
+          <p>
+            Gioca is a New Jersey soccer academy focused on world-class training
+            and whole-person development. Small groups, mental performance, and
+            personalized coaching in Central NJ.
+          </p>
         </header>
 
-        <div className="about-clips" aria-label="Players in action">
-          {playPhotos.map((photo) => (
-            <div key={photo.src} className="about-clips__item">
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
-            </div>
+        <section className="about-story" aria-label="Our story and values">
+          <header className="about-story__intro">
+            <p className="eyebrow">Our Story & Values</p>
+            <h2>The story behind Gioca and why we do things differently</h2>
+          </header>
+
+          {storyBlocks.map((block, index) => (
+            <article
+              key={block.title}
+              className={`about-story__row${index % 2 === 1 ? ' about-story__row--reverse' : ''}`}
+            >
+              <div className="about-story__photo">
+                <img
+                  src={block.photo.src}
+                  alt={block.photo.alt}
+                  loading="lazy"
+                />
+              </div>
+              <div className="about-story__copy">
+                <p className="eyebrow">{block.title}</p>
+                <h3>{block.subtitle}</h3>
+                <p>{block.body}</p>
+              </div>
+            </article>
           ))}
-        </div>
+        </section>
 
         <div className="about-video">
           <p className="eyebrow">Hear from the coaches</p>
           <h2>Why we built Gioca</h2>
           <p className="section__intro">
-            Press play to hear Zane and Julian talk about the academy, our
-            approach, and what whole-person development means for every player.
+            We started Gioca out of necessity. Local academies weren&apos;t
+            meeting the holistic needs of players. Many prioritized growth over
+            quality and overlooked how soccer can shape young people beyond the
+            field. Gioca was built to change that — delivering world-class
+            training and real-life tools like confidence, discipline, and mental
+            performance.
           </p>
           <div className="about-video__frame about-video__frame--landscape">
             <video
@@ -69,37 +112,14 @@ export function About() {
           </div>
         </div>
 
-        <div className="prose">
-          <p>
-            At Gioca Soccer Academy, we believe development goes far beyond the
-            field. We started Gioca because local academies were prioritizing
-            size over quality, leaving too many players overlooked. Our focus is
-            different: small groups, individualized attention, and a holistic
-            approach that builds both skill and character.
-          </p>
-          <p>
-            Every player is challenged to grow technically, mentally, and
-            personally, so they can thrive not just in soccer, but in every area
-            of life. We stay true to our mission with a consistent voice:
-            professional, positive, and inspiring.
-          </p>
-          <p>
-            Gioca isn&apos;t just a place to train. It&apos;s a community where
-            athletes learn to compete with confidence, lead with character, and
-            enjoy the process of becoming their best selves.
-          </p>
-        </div>
-
         <section className="founders">
           <header className="section__header">
             <p className="eyebrow">Our Team</p>
             <h2>Meet the founders</h2>
             <p className="section__intro">
-              At Gioca, we believe soccer is more than a sport — it&apos;s a tool
-              to develop confident, resilient, and well-rounded individuals. Our
-              founders created Gioca out of necessity. They saw how many
-              academies focused on numbers over quality, leaving players without
-              the individual attention and holistic training they deserved.
+              Our mission is to develop professional-level players and
+              well-rounded individuals who can walk into any area of life and be
+              successful.
             </p>
           </header>
 
